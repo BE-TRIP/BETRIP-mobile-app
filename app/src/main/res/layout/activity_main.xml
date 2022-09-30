@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A49FE8"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
@@ -34,6 +34,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="50dp"
+        android:drawableTint="#000000"
         android:hint="Email"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -51,10 +52,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="¿Olvidaste tu contraseña?"
-        android:textAlignment="viewStart"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
+        android:text="¿Olvidaste tu contraseña?"
+        android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="10sp"
         android:textStyle="bold" />
@@ -63,12 +64,12 @@
         android:id="@+id/btLoginTraveler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:layout_marginStart="90dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="90dp"
-        android:text="Login Traveler"
         android:backgroundTint="@color/black"
-        />
+        android:text="Login Traveler"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/btLoginDriver"
@@ -78,7 +79,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="90dp"
         android:backgroundTint="@color/black"
-        android:text="Login Driver" />
+        android:text="Login Driver"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/tvSingUp"
@@ -96,8 +98,8 @@
         android:id="@+id/tvCopyright"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:text="TECAPPS - 2022"
         android:textAlignment="center"
