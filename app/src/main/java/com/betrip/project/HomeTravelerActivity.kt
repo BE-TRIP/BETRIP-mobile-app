@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.betrip.project.travelers.CreateEvent
-import com.betrip.project.travelers.SelectedTravelEvent
 import com.betrip.project.travelers.SettingTraveler
 import com.betrip.project.travelers.fragments.event_fragment
 import com.betrip.project.travelers.fragments.routes_fragment
@@ -14,7 +13,7 @@ import com.betrip.project.travelers.models.TravelEvent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class HomeTravellerActivity : AppCompatActivity() {
+class HomeTravelerActivity : AppCompatActivity() {
 
     lateinit var travelEvents: List<TravelEvent>
    // lateinit var travelEventAdapter: TravelEventAdapter
@@ -23,7 +22,7 @@ class HomeTravellerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_traveller)
+        setContentView(R.layout.activity_home_traveler)
         loadContact()
 
         replacePrincipalLayout(eventsFragment)
