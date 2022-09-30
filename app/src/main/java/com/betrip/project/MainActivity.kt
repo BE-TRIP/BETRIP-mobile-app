@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         btLogin.setOnClickListener {
             if(email.text!!.isNotEmpty() and password.text!!.isNotEmpty() and (driver.isChecked or traveler.isChecked)){
-                if(traveler.isChecked) startActivity(Intent(this, HomeDriverActivity::class.java))
+                if(driver.isChecked) startActivity(Intent(this, HomeDriverActivity::class.java))
                 else startActivity(Intent(this, HomeTravelerActivity::class.java))
             }
             else{
