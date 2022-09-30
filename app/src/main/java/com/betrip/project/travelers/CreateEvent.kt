@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.betrip.project.HomeTravellerActivity
+import com.betrip.project.HomeTravelerActivity
 import com.betrip.project.R
 
 class CreateEvent : AppCompatActivity() {
@@ -16,7 +16,7 @@ class CreateEvent : AppCompatActivity() {
 
     fun initButtons(){
         val btSave=findViewById<Button>(R.id.btSave).setOnClickListener(){
-            val intent = Intent(this, HomeTravellerActivity::class.java)
+            val intent = Intent(this, HomeTravelerActivity::class.java)
             startActivity(intent)
         }
     }

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.cardview.widget.CardView
-import com.betrip.project.HomeTravellerActivity
+import com.betrip.project.HomeTravelerActivity
 import com.betrip.project.MainActivity
 import com.betrip.project.R
 
@@ -25,7 +25,7 @@ class SettingTraveler : AppCompatActivity() {
             startActivity(intent)
         }
         cardTrips.setOnClickListener(){
-            val intent = Intent(this, HomeTravellerActivity::class.java)
+            val intent = Intent(this, HomeTravelerActivity::class.java)
             startActivity(intent)
         }
         cardClose.setOnClickListener(){
@@ -34,7 +34,7 @@ class SettingTraveler : AppCompatActivity() {
         }
 
         btnBack.setOnClickListener(){
-            val intent = Intent(this, HomeTravellerActivity::class.java)
+            val intent = Intent(this, HomeTravelerActivity::class.java)
             startActivity(intent)
         }
     }
