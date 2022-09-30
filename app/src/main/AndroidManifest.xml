@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Betrip"
         tools:targetApi="31">
         <activity
+            android:name=".travelers.CreateEvent"
+            android:exported="false" />
+        <activity
+            android:name=".travelers.SettingTraveler"
+            android:exported="false" />
+        <activity
+            android:name=".travelers.traveler_profile"
+            android:exported="false" />
+        <activity
+            android:name=".RoutesTraveler"
+            android:exported="false" />
+        <activity
+            android:name=".travelers.SelectedTravelEvent"
+            android:exported="false" />
+        <activity
             android:name=".HomeDriverActivity"
             android:exported="false">
             <meta-data
@@ -20,7 +35,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".HomeTravelerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

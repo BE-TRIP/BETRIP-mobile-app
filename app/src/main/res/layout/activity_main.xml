@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
         app:srcCompat="@drawable/betrip" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
         android:text="Login"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
 
+
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
         android:hint="Email"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -41,67 +44,89 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
         android:hint="Password"
         android:inputType="textPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
+        android:id="@+id/tvForgetPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
         android:text="¿Olvidaste tu contraseña?"
         android:textAlignment="viewStart"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="10sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btLoginTraveler"
+    <RadioGroup
+        android:id="@+id/rgButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="90dp"
         android:layout_marginEnd="90dp"
-        android:text="Login Traveler"
-        android:backgroundTint="@color/black"
-        />
+        >
+
+        <RadioButton
+            android:id="@+id/rbDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Conductor"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbTraveler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Viajero"
+            android:textSize="12sp" />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/btLoginDriver"
+        android:id="@+id/btLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="2dp"
         android:layout_marginEnd="90dp"
         android:backgroundTint="@color/black"
-        android:text="Login Driver" />
+        android:text="Login" />
 
     <TextView
         android:id="@+id/tvSingUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
         android:text="¿No tienes cuenta? Crea una aquí"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:textColor="@color/black"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvCopyright"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
         android:text="TECAPPS - 2022"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp" />
+
 
 </LinearLayout>

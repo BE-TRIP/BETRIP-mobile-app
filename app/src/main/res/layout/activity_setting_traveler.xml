@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".travelers.SettingTraveler">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdProfile"
+        android:layout_width="384dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="29dp"
+        app:layout_constraintEnd_toEndOf="@+id/crdTrips"
+        app:layout_constraintStart_toStartOf="@+id/crdTrips"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#7F8AED">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="57dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="41dp"
+                android:text="Perfil"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_gallery" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/btReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="88dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crdCloseSession"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdTrips"
+        android:layout_width="384dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#7F8AED"
+        app:layout_constraintEnd_toEndOf="@+id/crdSetting"
+        app:layout_constraintStart_toStartOf="@+id/crdSetting"
+        app:layout_constraintTop_toBottomOf="@+id/crdProfile">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="57dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="46dp"
+                android:text="Viajes"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdSetting"
+        android:layout_width="384dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#7F8AED"
+        app:layout_constraintEnd_toEndOf="@+id/crdPrivacy"
+        app:layout_constraintStart_toStartOf="@+id/crdPrivacy"
+        app:layout_constraintTop_toBottomOf="@+id/crdTrips">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="104dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="46dp"
+                android:text="Configuracion"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView13"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdPrivacy"
+        android:layout_width="384dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#7F8AED"
+        app:layout_constraintEnd_toEndOf="@+id/crdCloseSession"
+        app:layout_constraintStart_toStartOf="@+id/crdCloseSession"
+        app:layout_constraintTop_toBottomOf="@+id/crdSetting">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_secure" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="112dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="46dp"
+                android:text="Privacidad"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView14"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdCloseSession"
+        android:layout_width="384dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#E32222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crdPrivacy">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="137dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="45dp"
+                android:text="Cerrar Sesion"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView15"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
