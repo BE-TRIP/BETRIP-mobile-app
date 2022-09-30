@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -17,21 +19,14 @@ class MainActivity : AppCompatActivity() {
     private fun loginSystem() {
         val email=findViewById<EditText>(R.id.etEmail)
         val password=findViewById<EditText>(R.id.etPassword)
-        val btLogin=findViewById<Button>(R.id.btLoginTraveler)
-        val btLoginDriver=findViewById<Button>(R.id.btLoginDriver)
+        val btLogin=findViewById<Button>(R.id.btLogin)
+        val driver = findViewById<RadioButton>(R.id.rbDriver)
+        val traveler = findViewById<RadioButton>(R.id.rbTraveler)
 
         btLogin.setOnClickListener {
-            if(email.text!!.isNotEmpty() and password.text!!.isNotEmpty()){
-                startActivity(Intent(this, HomeTravellerActivity::class.java))
-            }
-            else{
-                showErrorText()
-            }
-        }
-
-        btLoginDriver.setOnClickListener {
-            if(email.text!!.isNotEmpty() and password.text!!.isNotEmpty()){
-                startActivity(Intent(this, HomeDriverActivity::class.java))
+            if(email.text!!.isNotEmpty() and password.text!!.isNotEmpty() and (driver.isChecked or traveler.isChecked)){
+                if(traveler.isChecked) startActivity(Intent(this, HomeDriverActivity::class.java))
+                else startActivity(Intent(this, HomeTravelerActivity::class.java))
             }
             else{
                 showErrorText()
