@@ -15,7 +15,7 @@ class CreateEvent : AppCompatActivity() {
     }
 
     fun initButtons(){
-        val btSave=findViewById<Button>(R.id.btSave).setOnClickListener(){
+        val btSave=findViewById<Button>(R.id.btCreateTrips).setOnClickListener(){
             val intent = Intent(this, HomeTravelerActivity::class.java)
             startActivity(intent)
         }
