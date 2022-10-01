@@ -24,7 +24,7 @@ class CreateMenuDriverActivity : AppCompatActivity() {
         }
 
         btSeeTrip.setOnClickListener {
-            startActivity(Intent(this, HomeDriverActivity::class.java))
+            startActivity(Intent(this,DriverTravels::class.java))
         }
     }
 }
