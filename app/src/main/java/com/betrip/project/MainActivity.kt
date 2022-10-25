@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.widget.*
+import com.betrip.project.api.RetrofitClient
+import com.betrip.project.models.LoginUser
+import com.betrip.project.storage.SharedPrefManager
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +32,18 @@ class MainActivity : AppCompatActivity() {
         btLogin.setOnClickListener {
             if(email.text!!.isNotEmpty() and password.text!!.isNotEmpty() and (driver.isChecked or traveler.isChecked)){
                 if(driver.isChecked) startActivity(Intent(this, HomeDriverActivity::class.java))
-                else startActivity(Intent(this, HomeTravelerActivity::class.java))
+                else {
+                    RetrofitClient.instance.userLogin(email.text.toString(), password.text.toString())
+                        .enqueue(object: Callback<LoginUser> {
+                            override fun onFailure(call: Call<LoginUser>, t: Throwable) {
+                                Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+                            }
+
+                            override fun onResponse(call: Call<LoginUser>, response: Response<LoginUser>) {
+                                startActivity(Intent(applicationContext, HomeTravelerActivity::class.java))
+                            }
+                        })
+                }
             }
             else{
                 showErrorText()
