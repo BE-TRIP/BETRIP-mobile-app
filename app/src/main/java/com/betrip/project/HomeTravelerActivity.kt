@@ -15,7 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeTravelerActivity : AppCompatActivity() {
 
-    lateinit var travelEvents: List<TravelEvent>
+
    // lateinit var travelEventAdapter: TravelEventAdapter
     val eventsFragment= event_fragment()
     val routesFragment= routes_fragment()
@@ -23,15 +23,12 @@ class HomeTravelerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_traveler)
-        loadContact()
+        //loadContact()
 
         replacePrincipalLayout(eventsFragment)
         menuListener()
     }
-    private fun loadContact() {
-        val geeks = listOf(TravelEvent("Lima","25-12-2002","15:00",12))
-        travelEvents=geeks;
-    }
+
     private fun routes(){
         val intent = Intent(this, SettingTraveler::class.java)
         startActivity(intent)
