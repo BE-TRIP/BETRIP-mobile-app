@@ -1,7 +1,7 @@
 package com.betrip.project.storage
 
 import android.content.Context
-import com.betrip.project.models.LoginUser
+import com.betrip.project.models.LoginTraveler
 
 class SharedPrefManager private constructor(private val mCtx: Context){
 
@@ -23,7 +23,7 @@ class SharedPrefManager private constructor(private val mCtx: Context){
         }*/
 
 
-    fun saveUser(user: LoginUser) {
+    fun saveUser(user: LoginTraveler) {
 
         val sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()

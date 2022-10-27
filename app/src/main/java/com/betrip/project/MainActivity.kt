@@ -4,12 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.widget.*
 import com.betrip.project.api.Api
-import com.betrip.project.models.LoginUser
+import com.betrip.project.models.LoginTraveler
 import com.betrip.project.models.User
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,12 +40,12 @@ class MainActivity : AppCompatActivity() {
                 if(driver.isChecked) startActivity(Intent(this, HomeDriverActivity::class.java))
                 else {
                     val user: User = User(email.text.toString(),password.text.toString())
-                    service.userLogin(user).enqueue(object : Callback<LoginUser>{
-                        override fun onFailure(call: Call<LoginUser>, t: Throwable) {
+                    service.userLogin(user).enqueue(object : Callback<LoginTraveler>{
+                        override fun onFailure(call: Call<LoginTraveler>, t: Throwable) {
                             Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_LONG).show()
                         }
 
-                        override fun onResponse(call: Call<LoginUser>, response: Response<LoginUser>) {
+                        override fun onResponse(call: Call<LoginTraveler>, response: Response<LoginTraveler>) {
                             if(response.isSuccessful){
                                 startActivity(Intent(this@MainActivity, HomeTravelerActivity::class.java))
                             }
