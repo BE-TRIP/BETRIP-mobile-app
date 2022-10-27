@@ -46,6 +46,7 @@ tools:context=".drivers.CreateTripActivity">
                 app:layout_constraintTop_toBottomOf="@+id/textView26">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTripDestiny"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Destino" />
@@ -63,6 +64,7 @@ tools:context=".drivers.CreateTripActivity">
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTripSeats"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Asientos" />
@@ -80,6 +82,7 @@ tools:context=".drivers.CreateTripActivity">
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTripDepartTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Hora de Salida" />
@@ -97,6 +100,7 @@ tools:context=".drivers.CreateTripActivity">
                 app:layout_constraintTop_toBottomOf="@id/textInputLayout3">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTripDepartDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Fecha de Salida" />
@@ -114,6 +118,7 @@ tools:context=".drivers.CreateTripActivity">
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTripCost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Costo por Asiento" />
@@ -131,6 +136,7 @@ tools:context=".drivers.CreateTripActivity">
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTripDepartPlace"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Lugar de Salida" />
