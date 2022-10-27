@@ -4,13 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.util.Log
 import android.widget.*
-import com.betrip.project.api.RetrofitClient
+import com.betrip.project.api.Api
 import com.betrip.project.models.LoginUser
-import com.betrip.project.storage.SharedPrefManager
+import com.betrip.project.models.User
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,22 +31,29 @@ class MainActivity : AppCompatActivity() {
         val traveler = findViewById<RadioButton>(R.id.rbTraveler)
         val goSignUp=findViewById<TextView>(R.id.tvSingUp)
         goSignUp.text=(Html.fromHtml("¿No tienes cuenta? <u>Crea una aquí</u>"))
-
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl("https://betrip2022.herokuapp.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val service = retrofit.create<Api>(Api::class.java)
 
         btLogin.setOnClickListener {
             if(email.text!!.isNotEmpty() and password.text!!.isNotEmpty() and (driver.isChecked or traveler.isChecked)){
                 if(driver.isChecked) startActivity(Intent(this, HomeDriverActivity::class.java))
                 else {
-                    RetrofitClient.instance.userLogin(email.text.toString(), password.text.toString())
-                        .enqueue(object: Callback<LoginUser> {
-                            override fun onFailure(call: Call<LoginUser>, t: Throwable) {
-                                Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                            }
+                    val user: User = User(email.text.toString(),password.text.toString())
+                    service.userLogin(user).enqueue(object : Callback<LoginUser>{
+                        override fun onFailure(call: Call<LoginUser>, t: Throwable) {
+                            Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_LONG).show()
+                        }
 
-                            override fun onResponse(call: Call<LoginUser>, response: Response<LoginUser>) {
-                                startActivity(Intent(applicationContext, HomeTravelerActivity::class.java))
+                        override fun onResponse(call: Call<LoginUser>, response: Response<LoginUser>) {
+                            if(response.isSuccessful){
+                                startActivity(Intent(this@MainActivity, HomeTravelerActivity::class.java))
                             }
-                        })
+                            else Toast.makeText(this@MainActivity, "Error en el usuario o contraseña!", Toast.LENGTH_SHORT).show()
+                        }
+                    })
                 }
             }
             else{
